@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecipeListView: View {
     
-    @State private var model = RecipeModel()
+    @Environment(RecipeModel.self) private var model
     
     var body: some View {
         
@@ -39,4 +39,5 @@ struct RecipeListView: View {
     }
 #Preview {
     RecipeListView()
+        .environment(RecipeModel())
 }

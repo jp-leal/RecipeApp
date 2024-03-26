@@ -9,7 +9,7 @@ import Foundation
 import Observation
 
 @Observable
-class RecipeModel {
+class RecipeModel: ObservableObject {
     var recipes = [Recipe]()
     
     init() {
