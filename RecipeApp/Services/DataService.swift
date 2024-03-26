@@ -9,7 +9,7 @@ import Foundation
 
 class DataService {
     func getLocalDate() -> [Recipe] {
-        let pathString = Bundle.main.path(forResource: "data", ofType: "json")
+        let pathString = Bundle.main.path(forResource: "recipes", ofType: "json")
         
         guard pathString != nil else {
             return [Recipe]()
