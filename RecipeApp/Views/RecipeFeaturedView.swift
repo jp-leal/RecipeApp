@@ -16,6 +16,7 @@ struct RecipeFeaturedView: View {
             Text("Featured Recipes")
                 .bold()
                 .padding(.leading)
+                .padding(.top, 40)
                 .font(.largeTitle)
             GeometryReader { geo in
                 TabView{
@@ -27,18 +28,18 @@ struct RecipeFeaturedView: View {
                                 Rectangle()
                                     .foregroundStyle(.white)
                                 VStack(spacing: 0){
-                                    Image(.bakedPotato)
+                                    Image(model.recipes[index].image)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .clipped()
-                                    Text("Baked Potato")
+                                    Text(model.recipes[index].name)
                                         .padding(5)
                                 }
                                 
                             }
                             .frame(width: geo.size.width - 40, height:  geo.size.height - 100, alignment: .center)
                             .clipShape(.rect(cornerRadius: 15))
-                            .shadow(radius: 10)
+                            .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5), radius: 5, x: -2, y: -1)
                             
                         }
                     }
